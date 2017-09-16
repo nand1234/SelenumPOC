@@ -1,0 +1,3 @@
+Module,Submodule,Test Case,UserName,Password,InputData,Actual result,Expected result,Status,Test Case Type
+Case,Addcase,verify user able to add new case,Admin,vievu123,Case#1,Case added successfully,case added successfully,Pass,Smoke
+Case,Addcase,verify user able to add new case,Admin,vievu123,Case#2,Case added successfully,case added successfully,Pass,Smoke
