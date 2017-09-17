@@ -10,20 +10,29 @@ namespace VievU.UIPageRepository
     {
        public String GetUserNameLocatorType()
         {
-            return "email";
+            return "Id";
         }
         public String GetPasswordLocatorType()
         {
-            return "pass";
+            return "Id";
         }
 
         public String GetUserNameLocatorvalue()
         {
-            return "Nandkumar.ghtage@facebook.com";
+            return "Login";
         }
         public String GetPasswordLocatorvalue()
         {
-            return "Password@123";
+            return "Password";
+        }
+
+        public String Submitlocatortype()
+        {
+            return "CssSelector";
+        }
+        public String SubmitlocatorValue()
+        {
+            return "input[type=submit]";
         }
     }
 
