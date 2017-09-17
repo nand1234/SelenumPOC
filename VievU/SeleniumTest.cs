@@ -80,7 +80,7 @@ namespace VievU
         [TestMethod]
         public void ChromeTest()
         {
-            IWebDriver driver = WebDriverFactory.WebDriver.GetBrowser(Browser.Firefox.ToString());
+            IWebDriver driver = WebDriverFactory.WebDriver.GetBrowser(Browser.Chrome.ToString());
             WebDriverFactory.WebDriver.launchURL(URL);
             LoginUI Ui = new LoginUI();
             String Usernametype = Ui.GetPasswordLocatorType();

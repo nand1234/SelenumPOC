@@ -21,10 +21,10 @@ namespace VievU.WebDriverFactory
                 {
 
                     case "Chrome":
-                        driver = new ChromeDriver(@"F:\Periscope-Repo\vievu-automation-framwork\VievU\SeleniumDriverFile\");
+                        driver = new ChromeDriver(@"..\..\SeleniumDriverFile");
                         break;
                     case "IE":
-                        driver = new InternetExplorerDriver(@"F:\Periscope-Repo\vievu-automation-framwork\VievU\SeleniumDriverFile\");
+                        driver = new InternetExplorerDriver(@"..\..\SeleniumDriverFile");
                         break;
                     case "Firefox":
                         driver = new FirefoxDriver();
@@ -35,7 +35,7 @@ namespace VievU.WebDriverFactory
                         break;
 
                 }
-
+            
           
             return driver;
 
