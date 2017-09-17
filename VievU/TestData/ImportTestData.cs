@@ -10,7 +10,7 @@ namespace VievU.TestData
 {
     class ImportTestData
     {
-        public void inportTestData()
+        public void importTestData()
         {
             var fileName = string.Format(@"F:\TestData\TestData.xlsx");
             var connectionString = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;data source="+fileName+";Extended Properties=\"Excel 12.0 Xml;HDR=YES;IMEX=1;\"");

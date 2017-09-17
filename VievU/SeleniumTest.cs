@@ -24,7 +24,7 @@ namespace VievU
         public void importTestdata()
         {
             ImportTestData import = new ImportTestData();
-            import.inportTestData();
+            import.importTestData();
         }
         
 
