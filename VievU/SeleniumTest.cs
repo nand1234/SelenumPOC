@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 using VievU.UIPageRepository;
 using VievU.WebDriverFactory;
 using VievU.ActionKeywords;
-using VievU.TestData;
+using VievU.UIPageFactory;
 
 namespace VievU
 {
@@ -12,7 +12,7 @@ namespace VievU
     public class SeleniumTest
     {
         public enum Browser
-            {
+        {
             Chrome,
             IE,
             Firefox
@@ -23,80 +23,46 @@ namespace VievU
         [TestInitialize]
         public void importTestdata()
         {
-            ImportTestData import = new ImportTestData();
-            import.importTestData();
+            // ImportTestData import = new ImportTestData();
+            //import.importTestData();
         }
-        
 
-
+        /// <summary>
+        /// Test Suite for IE Browser
+        /// </summary>
         [TestMethod]
-        public  void IETest()
+        public void IETest()
         {
-          IWebDriver driver=  WebDriverFactory.WebDriver.GetBrowser(Browser.IE.ToString());
-          WebDriverFactory.WebDriver.launchURL(URL);
-
-            LoginUI Ui = new LoginUI();
-            String Usernametype = Ui.GetPasswordLocatorType();
-            String Passwordtype = Ui.GetPasswordLocatorType();
-            String UsernameValue = Ui.GetUserNameLocatorvalue();
-            String paswordValue = Ui.GetPasswordLocatorvalue();
-            String SubmitlocatorType = Ui.Submitlocatortype();
-            String submitLocatorValue = Ui.SubmitlocatorValue();
-            IWebElement username = GetWebDriverLocator.FindElement(Usernametype, UsernameValue, driver);
-            IWebElement Submit = GetWebDriverLocator.FindElement(SubmitlocatorType, submitLocatorValue, driver);
-            KeyboardActions.SendKeys(username, "Admin", driver);
-            MouseActions.Click(Submit, driver);
-            IWebElement Password = GetWebDriverLocator.FindElement(Passwordtype, paswordValue, driver);
-            KeyboardActions.SendKeys(Password, "Vievu", driver);
-            IWebElement login = GetWebDriverLocator.FindElement(SubmitlocatorType, submitLocatorValue, driver);
-            MouseActions.Click(login, driver);
-
-
-
-
+            IWebDriver driver = WebDriverFactory.WebDriver.GetBrowser(Browser.IE.ToString());
+            WebDriverFactory.WebDriver.launchURL(URL);
+            PageFactory login = new PageFactory();
+            login.login("Admin", "Vievu", driver);
         }
+
+        /// <summary>
+        /// Test Suite for FIrefox browser
+        /// </summary>
+
         [TestMethod]
         public void FFTest()
         {
             IWebDriver driver = WebDriverFactory.WebDriver.GetBrowser(Browser.Firefox.ToString());
             WebDriverFactory.WebDriver.launchURL(URL);
-            LoginUI Ui = new LoginUI();
-            String Usernametype = Ui.GetPasswordLocatorType();
-            String Passwordtype = Ui.GetPasswordLocatorType();
-            String UsernameValue = Ui.GetUserNameLocatorvalue();
-            String paswordValue = Ui.GetPasswordLocatorvalue();
-            String SubmitlocatorType = Ui.Submitlocatortype();
-            String submitLocatorValue = Ui.SubmitlocatorValue();
-            IWebElement username = GetWebDriverLocator.FindElement(Usernametype, UsernameValue, driver);
-            IWebElement Submit = GetWebDriverLocator.FindElement(SubmitlocatorType, submitLocatorValue, driver);
-            KeyboardActions.SendKeys(username, "Admin", driver);
-            MouseActions.Click(Submit, driver);
-            IWebElement Password = GetWebDriverLocator.FindElement(Passwordtype, paswordValue, driver);
-            KeyboardActions.SendKeys(Password, "Vievu", driver);
-            IWebElement login = GetWebDriverLocator.FindElement(SubmitlocatorType, submitLocatorValue, driver);
-            MouseActions.Click(login, driver);
-
+            PageFactory login = new PageFactory();
+            login.login("Admin","Vievu",driver);
+            
         }
+
+        /// <summary>
+        /// Test Suite for Chrome Browser
+        /// </summary>
         [TestMethod]
         public void ChromeTest()
         {
             IWebDriver driver = WebDriverFactory.WebDriver.GetBrowser(Browser.Chrome.ToString());
             WebDriverFactory.WebDriver.launchURL(URL);
-            LoginUI Ui = new LoginUI();
-            String Usernametype = Ui.GetPasswordLocatorType();
-            String Passwordtype = Ui.GetPasswordLocatorType();
-            String UsernameValue = Ui.GetUserNameLocatorvalue();
-            String paswordValue = Ui.GetPasswordLocatorvalue();
-            String SubmitlocatorType = Ui.Submitlocatortype();
-            String submitLocatorValue = Ui.SubmitlocatorValue();
-            IWebElement username = GetWebDriverLocator.FindElement(Usernametype, UsernameValue, driver);
-            IWebElement Submit = GetWebDriverLocator.FindElement(SubmitlocatorType, submitLocatorValue, driver);
-            KeyboardActions.SendKeys(username, "Admin", driver);
-            MouseActions.Click(Submit, driver);
-            IWebElement Password = GetWebDriverLocator.FindElement(Passwordtype, paswordValue, driver);
-            KeyboardActions.SendKeys(Password, "Vievu", driver);
-            IWebElement login = GetWebDriverLocator.FindElement(SubmitlocatorType, submitLocatorValue, driver);
-            MouseActions.Click(login, driver);
+            PageFactory login = new PageFactory();
+            login.login("Admin", "Vievu", driver);
 
         }
     }

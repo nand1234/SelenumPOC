@@ -14,6 +14,11 @@ namespace VievU.WebDriverFactory
     {
         private static IWebDriver driver;
      
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Browser"></param>
+        /// <returns></returns>
         public static IWebDriver GetBrowser(String Browser)
         {
             
@@ -22,26 +27,32 @@ namespace VievU.WebDriverFactory
 
                     case "Chrome":
                         driver = new ChromeDriver(@"..\..\SeleniumDriverFile");
+                    driver.Manage().Window.Maximize();
+                        
                         break;
                     case "IE":
                         driver = new InternetExplorerDriver(@"..\..\SeleniumDriverFile");
-                        break;
+                    driver.Manage().Window.Maximize();
+                    break;
                     case "Firefox":
-                        driver = new FirefoxDriver();
-                        break;
+                    driver = new FirefoxDriver();
+                    break;
 
                     default:
                         Console.WriteLine("Provided Browser is not exist");
                         break;
 
                 }
-            
-          
+                      
             return driver;
 
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="URL"></param>
         public static void launchURL(String URL)
         {
             driver.Navigate().GoToUrl(URL);

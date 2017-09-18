@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-
+/// <summary>
+/// It Retrun Login Page Locator type and Locator value required for searching element on UI
+/// </summary>
 namespace VievU.UIPageRepository
 {
     class LoginUI 

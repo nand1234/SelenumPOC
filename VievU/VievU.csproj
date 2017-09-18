@@ -104,6 +104,7 @@
     <Compile Include="SeleniumTest.cs" />
     <Compile Include="TestData\ImportTestData.cs" />
     <Compile Include="UIElementWait\ElementGlobalWait.cs" />
+    <Compile Include="UIPageFactory\PageFactory.cs" />
     <Compile Include="UIPageRepository\LoginUI.cs" />
     <Compile Include="WebDriverFactory\GetWebDriverLocator.cs" />
     <Compile Include="WebDriverFactory\WebDriver.cs" />
