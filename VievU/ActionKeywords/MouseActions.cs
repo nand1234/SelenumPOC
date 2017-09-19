@@ -9,6 +9,11 @@ namespace VievU.ActionKeywords
 {
     class MouseActions
     {
+        /// <summary>
+        /// This methos take element and driver as parameter and performe Click operation.
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="driver"></param>
         
         public static void Click(IWebElement element, IWebDriver driver)
         {

@@ -10,9 +10,12 @@ namespace VievU.WebDriverFactory
 {
     class GetWebDriverLocator 
     {
+        /// <summary>
+        /// Wrapper Class to retrun Locator detail required to search element on UI for operation
+        /// </summary>
         private static By by;
         private static IWebElement Element;
-       private static By GetLocator(String LocatorName, String LocatorValue)
+        private static By GetLocator(String LocatorName, String LocatorValue)
         {
             switch (LocatorName)
             {
@@ -46,6 +49,13 @@ namespace VievU.WebDriverFactory
             return by;
         }
 
+        /// <summary>
+        /// This method take below parameter and pass it to global wait method to search element on UI
+        /// </summary>
+        /// <param name="LocatorType"></param>
+        /// <param name="LocatorValue"></param>
+        /// <param name="driver"></param>
+        /// <returns></returns>
         public static IWebElement FindElement(String LocatorType, String LocatorValue, IWebDriver driver)
         {
            By locator= GetLocator(LocatorType, LocatorValue);

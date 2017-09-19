@@ -2,40 +2,62 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using OpenQA.Selenium;
+using VievU.WebDriverFactory;
 
 /// <summary>
-/// It Retrun Login Page Locator type and Locator value required for searching element on UI
+/// Retrun Login Page Locator type and Locator value required for searching element on UI
 /// </summary>
 namespace VievU.UIPageRepository
 {
     class LoginUI 
     {
-       public String GetUserNameLocatorType()
+        /// <summary>
+        /// Private member to store Locatortype and Value required to search element on UI
+        /// </summary>
+        private String  GetUserNameLocatorType = "Id";
+        private String GetPasswordLocatorType = "Id";
+        private String GetUserNameLocatorvalue = "Login";
+        private String GetPasswordLocatorvalue = "Password";
+        private String Submitlocatortype = "CssSelector";
+        private String SubmitlocatorValue = "input[type=submit]";
+
+        /// <summary>
+        /// This method first search for Username element on UI and wait unit element is displayed and retrun element for operation
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <returns> username</returns>
+        public IWebElement Username(IWebDriver driver)
         {
-            return "Id";
-        }
-        public String GetPasswordLocatorType()
-        {
-            return "Id";
+            IWebElement username = GetWebDriverLocator.FindElement(GetUserNameLocatorType, GetUserNameLocatorvalue, driver);
+
+            return username;
         }
 
-        public String GetUserNameLocatorvalue()
+        /// <summary>
+        /// This method first search for Password element on UI and wait unit element is displayed and retrun element for operation
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <returns> Passowrd</returns>
+        public IWebElement Password(IWebDriver driver)
         {
-            return "Login";
-        }
-        public String GetPasswordLocatorvalue()
-        {
-            return "Password";
+            IWebElement Password = GetWebDriverLocator.FindElement(GetPasswordLocatorType, GetPasswordLocatorvalue, driver);
+            return Password;
         }
 
-        public String Submitlocatortype()
+        /// <summary>
+        /// This method first search for Submit element on UI and wait unit element is displayed and retrun element for operation
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <returns> Submit</returns>
+        public IWebElement Submit(IWebDriver driver)
         {
-            return "CssSelector";
+            IWebElement Submit = GetWebDriverLocator.FindElement(Submitlocatortype, SubmitlocatorValue, driver);
+            return Submit;
         }
-        public String SubmitlocatorValue()
-        {
-            return "input[type=submit]";
-        }
+
+
+
     }
 
 }

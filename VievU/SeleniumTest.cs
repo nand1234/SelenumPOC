@@ -1,9 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using VievU.UIPageRepository;
-using VievU.WebDriverFactory;
-using VievU.ActionKeywords;
 using VievU.UIPageFactory;
 
 namespace VievU
@@ -11,6 +8,9 @@ namespace VievU
     [TestClass]
     public class SeleniumTest
     {
+        /// <summary>
+        /// Enum for Browser name to avoid typing error
+        /// </summary>
         public enum Browser
         {
             Chrome,
@@ -36,7 +36,7 @@ namespace VievU
             IWebDriver driver = WebDriverFactory.WebDriver.GetBrowser(Browser.IE.ToString());
             WebDriverFactory.WebDriver.launchURL(URL);
             PageFactory login = new PageFactory();
-            login.login("Admin", "Vievu", driver);
+            login.login("Admin", "Vievu123", driver);
         }
 
         /// <summary>
@@ -49,8 +49,8 @@ namespace VievU
             IWebDriver driver = WebDriverFactory.WebDriver.GetBrowser(Browser.Firefox.ToString());
             WebDriverFactory.WebDriver.launchURL(URL);
             PageFactory login = new PageFactory();
-            login.login("Admin","Vievu",driver);
-            
+            login.login("Admin", "Vievu123", driver);
+
         }
 
         /// <summary>
@@ -59,10 +59,11 @@ namespace VievU
         [TestMethod]
         public void ChromeTest()
         {
+
             IWebDriver driver = WebDriverFactory.WebDriver.GetBrowser(Browser.Chrome.ToString());
             WebDriverFactory.WebDriver.launchURL(URL);
             PageFactory login = new PageFactory();
-            login.login("Admin", "Vievu", driver);
+            login.login("Admin", "Vievu123", driver);
 
         }
     }

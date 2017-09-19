@@ -15,7 +15,7 @@ namespace VievU.WebDriverFactory
         private static IWebDriver driver;
      
         /// <summary>
-        /// 
+        /// This method take browser name as parameter and return browser instance specific driver instance.
         /// </summary>
         /// <param name="Browser"></param>
         /// <returns></returns>
